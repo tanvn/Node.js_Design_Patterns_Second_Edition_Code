@@ -9,6 +9,7 @@ function* iteratorGenerator(arr) {
 const iterator = iteratorGenerator(['apple', 'orange', 'watermelon']);
 let currentItem = iterator.next();
 while (!currentItem.done) {
-  console.log(currentItem.value);
+  console.log(currentItem);
   currentItem = iterator.next();
 }
+console.log("final : ", currentItem)

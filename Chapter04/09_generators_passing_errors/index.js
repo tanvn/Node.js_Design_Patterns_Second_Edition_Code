@@ -7,4 +7,4 @@ function* twoWayGenerator() {
 
 let twoWay = twoWayGenerator();
 twoWay.next();
-twoWay.throw(new Error());
+// twoWay.throw(new Error("exception here !!!"));
