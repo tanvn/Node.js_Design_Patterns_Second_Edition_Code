@@ -3,7 +3,7 @@
 var asyncDivision = require('./index.js');
 
 // callback oriented usage
-asyncDivision(10, 2, (error, result) => {
+asyncDivision(10, 0, (error, result) => {
   if (error) {
     return console.error(error);
   }

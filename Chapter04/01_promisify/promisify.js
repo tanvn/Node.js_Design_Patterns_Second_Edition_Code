@@ -1,6 +1,6 @@
-"use strict";
+// "use strict";
 
-module.exports = function(callbackBasedApi) {
+module.exports = function promisified(callbackBasedApi) {
   return function promisified() {
     const args = [].slice.call(arguments);
     return new Promise((resolve, reject) => {    //[1]

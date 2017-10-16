@@ -1,10 +1,10 @@
 "use strict";
 
 function* twoWayGenerator() {
-  const what = yield null;
+  const what = "hello, " + ( yield null);
   console.log('Hello ' + what);
 }
 
 const twoWay = twoWayGenerator();
-twoWay.next();
-twoWay.next('world');
+console.log(twoWay.next());
+console.log(twoWay.next('world'));

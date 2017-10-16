@@ -1,0 +1,25 @@
+{
+  "name": "node.js-design-pattern",
+  "version": "1.0.0",
+  "description": "This repository contains the code for all the example available inside Node.js Design Patterns Second Edition by [Mario Casciaro](https://github.com/mariocasciaro) and [Luciano Mammino](https://github.com/lmammino) (edited and published by [Packt](https://github.com/PacktPublishing))",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanvn/Node.js_Design_Patterns_Second_Edition_Code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanvn/Node.js_Design_Patterns_Second_Edition_Code/issues"
+  },
+  "homepage": "https://github.com/tanvn/Node.js_Design_Patterns_Second_Edition_Code#readme",
+  "devDependencies": {
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.1",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}

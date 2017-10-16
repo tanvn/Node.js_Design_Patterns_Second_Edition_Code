@@ -39,25 +39,32 @@ function saveFile(filename, contents, callback) {
 
 function download(url, filename, callback) {
   console.log(`Downloading ${url}`);
-  let body;
 
-  async.series([
+  async.waterfall([
     callback => {           //[1]
       request(url, (err, response, resBody) => {
         if(err) {
           return callback(err);
         }
-        body = resBody;
-        callback();
+        let body = resBody;
+        callback(null, body);
       });
     },
 
-    mkdirp.bind(null, path.dirname(filename)),    //[2]
+    (body, callback) => {
+      mkdirp(path.dirname(filename), (err) => {
+        if(err) return callback(err);
+        return  callback(null, body);
+      })    //[2]
+    },
 
-    callback => {           //[3]
-      fs.writeFile(filename, body, callback);
+    (body, callback) => {           //[3]
+      fs.writeFile(filename, body, err => {
+        if(err) return callback(err, null)
+          return callback(null, body);
+      });
     }
-  ], err => {         //[4]
+  ], (err, body) => {         //[4]
     if(err) {
       return callback(err);
     }
