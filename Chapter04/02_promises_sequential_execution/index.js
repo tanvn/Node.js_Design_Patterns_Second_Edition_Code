@@ -40,6 +40,7 @@ function download(url, filename) {
 }
 
 function spider(url, nesting) {
+  console.log(`spider : ${url} - nesting : ${nesting}`)
   let filename = utilities.urlToFilename(url);
   return readFile(filename, 'utf8')
     .then(
@@ -56,7 +57,7 @@ function spider(url, nesting) {
     );
 }
 
-spider(process.argv[2], 1)
+spider(process.argv[2], 2)
   .then(() => console.log('Download complete'))
   .catch(err => console.log(err))
 ;

@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = class TaskQueue {
-  constructor (concurrency) {
+  constructor(concurrency) {
     this.concurrency = concurrency;
     this.running = 0;
     this.queue = [];
